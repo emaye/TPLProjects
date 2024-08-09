@@ -32,8 +32,13 @@ class Program
 
         continuation.Wait();
 
-       // using Parallel.For to iterate over a range of numbers.
-        Parallel.For(0, 10, i =>
+        //Limiting the maximum degree of parallelism to 2
+        var options = new ParallelOptions()
+        {
+            MaxDegreeOfParallelism = 2
+        };
+        // using Parallel.For to iterate over a range of numbers.
+        Parallel.For(0, 10, options, i =>
         {
             Console.WriteLine($"Processing number: {i}");
 
