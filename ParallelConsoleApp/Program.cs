@@ -8,7 +8,6 @@ class Program
     {
 
         Task.Run(() => Console.WriteLine("Hello from Task!")).Wait();
-
         Console.WriteLine("Hello from Main!");
 
 
